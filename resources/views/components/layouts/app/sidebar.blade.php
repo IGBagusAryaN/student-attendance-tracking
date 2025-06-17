@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
     <head>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
         @include('partials.head')
     </head>
     <body class="min-h-screen bg-white dark:bg-zinc-800">
@@ -14,7 +15,9 @@
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Platform')" class="grid">
                     <flux:navlist.item icon="home" :href="route(auth()->user()->role == 'teacher' ? 'teacher.dashboard' : 'admin.dashboard')" :current="request()->routeIs(auth()->user()->role == 'teacher' ? 'teacher.dashboard' : 'admin.dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
-                    <flux:navlist.item icon="users " :href="route('student.index')" :current="request()->routeIs('student.index')" wire:navigate>{{ __('Student Management') }}</flux:navlist.item>
+                    <flux:navlist.item icon="users" :href="route('student.index')" :current="request()->routeIs('student.index')" wire:navigate>{{ __('Student Management') }}</flux:navlist.item>
+                    <flux:navlist.item icon="book-open" :href="route('grade.index')" :current="request()->routeIs('grade.index')" wire:navigate>{{ __('Grade Management') }}</flux:navlist.item>
+                    <flux:navlist.item icon="calendar-days" :href="route('attendance.page')" :current="request()->routeIs('attendance.page')" wire:navigate>{{ __('Attendance Management') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
             <flux:spacer />
@@ -120,7 +123,7 @@
 
         {{ $slot }}
 
- <x-toaster-hub />
+        <x-toaster-hub />
         @fluxScripts
     </body>
 </html>
