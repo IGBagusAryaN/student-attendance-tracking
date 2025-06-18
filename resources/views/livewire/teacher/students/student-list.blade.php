@@ -1,5 +1,5 @@
 <!-- Table Section -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+<div class="max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14 mx-auto">
     <!-- Card -->
     <div class="flex flex-col">
         <div class="-m-1.5 overflow-x-auto">
@@ -20,12 +20,7 @@
 
                         <div>
                             <div class="inline-flex gap-x-2">
-                                <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-                                    href="#">
-                                    View all
-                                </a>
-
-                                <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-400 text-white hover:bg-blue-500 focus:outline-hidden focus:bg-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                                     href="/create/student" wire:navigate>
                                     <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -91,22 +86,22 @@
                                         <div class="px-6 py-2">
                                             <span
                                                 class="text-sm text-gray-800 dark:text-neutral-200">{{ $student->grade->name }}
-                                                </span>
+                                            </span>
                                         </div>
                                     </td>
                                     <td class="h-px w-auto whitespace-nowrap">
-                                        <div class="flex justify-end gap-2 pr-4">
+                                        <div class="flex justify-end gap-2 pr-4 py-1">
                                             <a href="/edit/student/{{ $student->id }}"
-                                                class="py-2 px-3 flex justify-center items-center size-11 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                                class="cursor-pointer px-3 flex justify-center items-center size-10 text-sm font-medium rounded-lg border border-transparent bg-blue-400 text-white hover:bg-blue-500 focus:outline-hidden focus:bg-blue-500 disabled:opacity-50 disabled:pointer-events-none">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                     fill="currentColor" class="size-6">
                                                     <path
-                                                         d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
+                                                        d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
                                                 </svg>
                                             </a>
                                             <button type="button"
                                                 x-on:click="if (confirm('Apakah kamu yakin ingin menghapus?')) { $wire.delete({{ $student->id }}) }"
-                                                class="py-2 px-3 flex justify-center items-center size-11 text-sm font-medium rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                                class="cursor-pointer px-3 flex justify-center items-center size-10 text-sm font-medium rounded-lg border border-transparent bg-red-400 text-white hover:bg-red-500 focus:outline-hidden focus:bg-red-500 disabled:opacity-50 disabled:pointer-events-none">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                     fill="currentColor" class="size-6">
                                                     <path fill-rule="evenodd"
@@ -133,7 +128,7 @@
                             </p>
                         </div>
 
-                        <div>
+                        {{-- <div>
                             <div class="inline-flex gap-x-2">
                                 <button type="button"
                                     class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
@@ -155,7 +150,7 @@
                                     </svg>
                                 </button>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- End Footer -->
                 </div>

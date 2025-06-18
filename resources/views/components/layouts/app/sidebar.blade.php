@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
     <head>
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
         @include('partials.head')
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     </head>
     <body class="min-h-screen bg-white dark:bg-zinc-800">
         <flux:sidebar sticky stashable class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
 
-            <a href="{{ route(auth()->user()->role == 'teacher' ? 'teacher.dashboard' : 'admin.dashboard') }}" class="me-5 flex items-center space-x-2 rtl:space-x-reverse" wire:navigate>
-                <x-app-logo />
+            <a href="{{ route(auth()->user()->role == 'teacher' ? 'teacher.dashboard' : 'admin.dashboard') }}"class="relative z-20 flex items-center text-lg text-[#1d1d1d] dark:text-white font-semibold" wire:navigate>
+                <span class="flex h-10 w-10 items-center justify-center rounded-md">
+                    <x-app-logo-icon class="me-2 h-7 fill-current text-[#1d1d1d] dark:text-white" />
+                </span>
+                {{ config('app.name', 'Laravel') }}
             </a>
 
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Platform')" class="grid">
                     <flux:navlist.item icon="home" :href="route(auth()->user()->role == 'teacher' ? 'teacher.dashboard' : 'admin.dashboard')" :current="request()->routeIs(auth()->user()->role == 'teacher' ? 'teacher.dashboard' : 'admin.dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
+                    @if (auth()->user()->role == 'admin')                        
                     <flux:navlist.item icon="users" :href="route('student.index')" :current="request()->routeIs('student.index')" wire:navigate>{{ __('Student Management') }}</flux:navlist.item>
                     <flux:navlist.item icon="book-open" :href="route('grade.index')" :current="request()->routeIs('grade.index')" wire:navigate>{{ __('Grade Management') }}</flux:navlist.item>
+                    @endif
                     <flux:navlist.item icon="calendar-days" :href="route('attendance.page')" :current="request()->routeIs('attendance.page')" wire:navigate>{{ __('Attendance Management') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
@@ -123,7 +129,7 @@
 
         {{ $slot }}
 
-        <x-toaster-hub />
         @fluxScripts
+        <x-toaster-hub />
     </body>
 </html>

@@ -1,5 +1,5 @@
 <!-- Table Section -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+<div class="max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14 mx-auto">
     <!-- Card -->
     <div class="flex flex-col">
         <div class="-m-1.5 overflow-x-auto">
@@ -20,12 +20,7 @@
 
                         <div>
                             <div class="inline-flex gap-x-2">
-                                <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-                                    href="#">
-                                    View all
-                                </a>
-
-                                <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-400 text-white hover:bg-blue-500 focus:outline-hidden focus:bg-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                                     href="/create/grade" wire:navigate>
                                     <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -69,9 +64,9 @@
                                     </td>
 
                                     <td class="h-px w-auto whitespace-nowrap">
-                                        <div class="flex justify-end gap-2 pr-4">
+                                        <div class="flex justify-end gap-2 pr-4 py-1">
                                             <a href="/edit/grade/{{ $grade->id }}"
-                                                class="py-2 px-3 flex justify-center items-center size-11 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                                class="cursor-pointer px-3 flex justify-center items-center size-10 text-sm font-medium rounded-lg border border-transparent bg-blue-400 text-white hover:bg-blue-500 focus:outline-hidden focus:bg-blue-500 disabled:opacity-50 disabled:pointer-events-none">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                     fill="currentColor" class="size-6">
                                                     <path
@@ -80,7 +75,7 @@
                                             </a>
                                             <button type="button"
                                                 x-on:click="if (confirm('Apakah kamu yakin ingin menghapus?')) { $wire.delete({{ $grade->id }}) }"
-                                                class="py-2 px-3 flex justify-center items-center size-11 text-sm font-medium rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                                class="cursor-pointer px-3 flex justify-center items-center size-10 text-sm font-medium rounded-lg border border-transparent bg-red-400 text-white hover:bg-red-500 focus:outline-hidden focus:bg-red-500 disabled:opacity-50 disabled:pointer-events-none">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                     fill="currentColor" class="size-6">
                                                     <path fill-rule="evenodd"

@@ -38,6 +38,6 @@ class Register extends Component
 
         Auth::login($user);
 
-        $this->redirect(route('dashboard', absolute: false), navigate: true);
+        $this->redirect(route(Auth::user()->role == 'teacher' ? 'teacher.dashboard' : 'admin.dashboard', absolute: false), navigate: true);
     }
 }

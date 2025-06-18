@@ -62,7 +62,7 @@ class AttendancePage extends Component
 
         $this->attendance[$studentId][$day] = $status;
 
-        Toaster::success('Attendance for date:' . $date . ' for studentID' . $studentId . 'was updated succesfully');
+        Toaster::success('Attendance for date:' . $date . ' for students attendance number ' . $studentId . ' was updated succesfully');
     }
 
     public function markAll($day, $status)
