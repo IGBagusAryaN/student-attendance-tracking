@@ -11,7 +11,7 @@ use App\Livewire\Teacher\Grades\GradeList;
 use App\Livewire\Teacher\Students\AddStudent;
 use App\Livewire\Teacher\Students\EditStudent;
 use App\Livewire\Teacher\Students\StudentList;
-
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
 
@@ -42,6 +42,18 @@ Route::middleware(['admin', 'auth'])->group(function () {
     Route::get('/grade-list', GradeList::class)->name('grade.index');
     Route::get('/create/grade', AddGrade::class)->name('grade.create');
     Route::get('/edit/grade/{id}', EditGrade::class)->name('grade.edit');
+});
+
+Route::get('/lottie/animation-auth.json', function () {
+    $path = public_path('lottie/animation-auth.json');
+
+    if (!file_exists($path)) {
+        abort(404);
+    }
+
+    return Response::file($path, [
+        'Content-Type' => 'application/json'
+    ]);
 });
 
 require __DIR__ . '/auth.php';
