@@ -22,7 +22,7 @@ class DashbboardWidgetOverview extends Component
 
     public function mount()
     {
-        $today = Carbon::today();
+        $today = now('Asia/Jakarta')->startOfDay();
         $weekStart = Carbon::now()->startOfWeek();
         $weekEnd = Carbon::now()->endOfWeek();
         $monthStart = Carbon::now()->startOfMonth();
@@ -46,6 +46,7 @@ class DashbboardWidgetOverview extends Component
                 'count' => Attendance::whereDate('date', $date)->where('status', 'present')->count(),
             ];
         }
+
     }
 
     public function render()

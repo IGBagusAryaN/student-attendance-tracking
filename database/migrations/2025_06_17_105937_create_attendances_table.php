@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('student_id')->constrained()->cascadeOnDelete();
             $table->foreignId('grade_id')->constrained()->cascadeOnDelete();
             $table->date('date');
-            $table->enum('status', ['present', 'absent', 'sick', 'other'])->default('present');
+            $table->enum('status', ['check','present', 'absent', 'sick', 'other'])->default('check');
             $table->text('reason')->nullable();
             $table->timestamps();
         });
