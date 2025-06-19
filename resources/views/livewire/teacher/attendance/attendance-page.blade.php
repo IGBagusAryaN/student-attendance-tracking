@@ -99,25 +99,6 @@
                                                     {{ $day }} {{ $daysLabel[$day] }}<< /th>
                                             @endforeach
                                         @endif
-
-                                        {{-- @foreach (range(1, $daysInMonth) as $day)
-                                            <th scope="col"
-                                                class="px-6 py-3 text-start border border-gray-200 dark:border-neutral-700-s border border-gray-200 dark:border-neutral-700-gray-200 dark:border border-gray-200 dark:border-neutral-700-neutral-700">
-                                                <span
-                                                    class="text-xs font-semibold uppercase text-gray-800 dark:text-neutral-200">
-                                                    {{ $day }}
-                                                    <select
-                                                        wire:change="markAll({{ $day }}, $event.target.value)"
-                                                        class="">
-                                                        <option selected value="">All</option>
-                                                        <option value="present">Present</option>
-                                                        <option value="absent">Absent</option>
-                                                        <option value="sick">Sick</option>
-                                                        <option value="other">Other</option>
-                                                    </select>
-                                                </span>
-                                            </th>
-                                        @endforeach --}}
                                     </tr>
                                 </thead>
                                 <tbody class=" divide-y divide-gray-200 dark:divide-neutral-700">
